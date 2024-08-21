@@ -16,7 +16,7 @@ const StaggeredAnimationText: FC<{ text: string }> = ({ text }) => {
 			{/* use the initial and animate states from AnimateProps */}
 			<motion.span
 				arial-hidden="true"
-				className="md:text-8xl text-6xl"
+				className="md:text-8xl text-6xl text-gray-400"
 				initial="initial"
 				animate="animate"
 				transition={{ staggerChildren: 0.01 }}

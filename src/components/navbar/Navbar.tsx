@@ -1,8 +1,12 @@
 import { FC } from "react";
 
-const Navbar: FC = () => {
+const Navbar: FC<{ showNav: boolean }> = ({ showNav }) => {
 	return (
-		<nav className=" text-sm w-full py-2 h-14 flex justify-between flex-row border-b border-opacity-15  border-gray-400">
+		<nav
+			className={` ${
+				showNav ? "transform translate-y-0" : "transform -translate-y-full"
+			} transition-transform z-10 sticky top-0 duration-300 text-sm w-full p-6 flex justify-between flex-row border-b border-opacity-15  border-gray-400`}
+		>
 			<ul className="flex justify-center items-start flex-row space-x-4">
 				<li>
 					<button id="work" className="text-gray-400 hover:text-yellow-600 ">
