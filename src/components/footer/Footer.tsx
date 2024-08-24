@@ -1,11 +1,11 @@
-import React from "react";
-import { Form } from "react-router-dom";
 import { ContactUs } from "./Contact";
+import Copyright from "./Copyright";
 
 const Footer = () => {
 	return (
-		<section className="flex">
+		<section className="flex md:flex-row flex-col gap-2">
 			<ContactUs />
+			<Copyright />
 		</section>
 	);
 };

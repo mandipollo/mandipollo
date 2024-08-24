@@ -5,16 +5,10 @@ const Navbar: FC<{ showNav: boolean }> = ({ showNav }) => {
 		<nav
 			className={` ${
 				showNav ? "transform translate-y-0" : "transform -translate-y-full"
-			} transition-transform z-10 sticky top-0 duration-300 text-sm w-full p-6 flex justify-between flex-row border-b border-opacity-15  border-gray-400`}
+			} transition-transform z-10  bg-white/0 shadow-sm ring-black/5 backdrop-blur-sm sticky top-0 duration-300 text-sm w-full p-6 flex justify-between flex-row border-b border-opacity-15  border-gray-400`}
 		>
 			<ul className="flex justify-center items-start flex-row space-x-4">
-				<li>
-					<button id="work" className="text-gray-400 hover:text-yellow-600 ">
-						Work
-					</button>
-					<p className="font-semibold">by Mandip Gurung</p>
-				</li>
-				<li className=" md:flex flex-col hidden">
+				<li className=" flex flex-col">
 					<button id="work" className="text-gray-400 hover:text-yellow-600 ">
 						Front End Developer
 					</button>
@@ -22,7 +16,13 @@ const Navbar: FC<{ showNav: boolean }> = ({ showNav }) => {
 				</li>
 			</ul>
 
-			<button className=" hover:text-yellow-600">MAIL</button>
+			<a
+				className=" hover:text-yellow-600"
+				href="https://github.com/mandipollo/"
+				target="blank"
+			>
+				Github
+			</a>
 		</nav>
 	);
 };

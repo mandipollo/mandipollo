@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import { useEffect, useState } from "react";
+
 const Root = () => {
 	const [showNav, setShowNav] = useState<boolean>(true);
 	const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -29,7 +30,7 @@ const Root = () => {
 	}, [lastScrollY]);
 
 	return (
-		<main className="flex relative flex-col  w-screen ">
+		<main className="flex relative flex-col  w-screen overflow-auto ">
 			<Navbar showNav={showNav} />
 			<section className="p-6 ">
 				<Outlet />

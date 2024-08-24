@@ -1,74 +1,99 @@
 import { FC } from "react";
+import StaggeredAnimationText from "../animation/StaggerAnimation";
+
+import taskdomSvg from "../../assets/taskdomLogo.svg";
+import estateSvg from "../../assets/estateLogo.svg";
 
 const Projects: FC = () => {
 	return (
-		<section className="flex relative md:flex-row flex-col border-y md:p-20 p-2  border-opacity-5  ">
-			<section className="flex h-20 md:w-1/2  md:sticky top-20 md:justify-center">
-				<p className="md:text-6xl text-4xl">Projects.</p>
+		<section className="flex relative md:flex-row flex-col border-y  p-2 md:py-20  border-opacity-5  ">
+			<section className="flex flex-col h-full md:w-1/2  md:sticky top-20  ">
+				{/* <p className="md:text-5xl text-2xl">Projects.</p> */}
+				<StaggeredAnimationText
+					text="Projects"
+					className="md:text-5xl text-2xl flex justify-center"
+				/>
 			</section>
-			<section className="flex md:w-1/2 text-gray-400">
-				<ul className="space-y-10">
-					<li className=" space-y-10">
-						<a
-							className="text-black underline underline-offset-2"
-							target="_blank"
-							href="https://taskdom.web.app/"
-						>
-							Taskdom.
-						</a>
-						<p>
-							Taskdom A project management application built using TypeScript,
-							React, Tailwind CSS, HTML, Redux Toolkit, React Router, and
-							Firebase.
-						</p>
-						<p>
-							This application allows users to manage projects, add or remove
-							team members, and assign tasks, all with real-time updates.
-							Features User Authentication. Project Management: Create and
-							manage projects, tasks, including adding and removing team
-							members. Task Assignment: Assign tasks to team members, track
-							progress, and manage deadlines. Real-Time Updates: All changes are
-							reflected in real-time using Firebase Firestore and Cloud
-							Functions. Responsive Design: Responsive and modern UI using
-							Tailwind CSS. Technologies Used TypeScript: For type safety and
-							robust codebase. React: Frontend library for building user
-							interfaces. Tailwind CSS: Utility-first CSS framework for styling.
-							Redux Toolkit: For state management. React Router: For navigation
-							within the app. Firebase: Backend services including: Firebase
-							Auth: User authentication. Firebase Firestore: Real-time database
-							for storing projects and tasks. Firebase Storage: Storage for user
-							files and project assets.
-						</p>
-						<link rel="stylesheet" href="https://taskdom.web.app/"></link>
-					</li>
-					<li className=" space-y-10">
-						<a
-							href="https://estate-2aef8.web.app/"
-							target="_blank"
-							className="text-black underline underline-offset-2"
-						>
-							Estate.
-						</a>
-						<p>
-							A property search application built using React, HTML, Redux
-							Toolkit, React Router, material-ui , rapid api and Firebase.
-						</p>
+			<section className="flex  flex-1 w-full  text-gray-400">
+				<ul className="flex flex-col space-y-10 font-extralight">
+					<li className=" flex flex-col space-y-10">
+						<div className="h-14 w-14 bg-black flex justify-center items-center">
+							<img src={taskdomSvg} alt="taskdom logo" className="h-10 w-10" />
+						</div>
+
+						<div>
+							<a
+								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
+								target="_blank"
+								href="https://taskdom.web.app/"
+							>
+								Taskdom.
+							</a>
+						</div>
+
+						<div className="h-full w-full flex rounded-md  justify-center items-center  ">
+							<img
+								src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1719861512/taskSnapshot_q7udnp.jpg"
+								alt="taskdom"
+							/>
+						</div>
 
 						<p>
-							Autocomplete Search: Utilizes the Rapid API to provide
-							autocomplete suggestions as users search for properties. Filtering
-							Options: Users can filter properties based on criteria such as
-							price, number of bedrooms, property type, and more. User
-							Authentication: Integration with Firebase Authentication ensures
-							secure user authentication. Realtime Database: Firebase Realtime
-							Database is used to store and retrieve property data and user
-							information. Save and Remove Properties: Users can save properties
-							for later reference and remove them as needed. User Page: A
-							dedicated user page allows users to view their saved properties.
-							Server Response Time: Please note that the server response time,
-							especially when querying the Rapid API for property data, is
-							substantial, often exceeding 7000ms.
+							A project management app which lets you manage , assign tasks to
+							members.
 						</p>
+						<ul className="flex flex-col space-y-2 text-gray-400 ">
+							<li className="text-black ">Tech Stack</li>
+							<li>Typescript</li>
+							<li>React</li>
+							<li>Redux/toolkit</li>
+							<li>React-router</li>
+							<li>Tailwind</li>
+							<li>Firebase auth</li>
+							<li>Firestore database</li>
+							<li>Firebase storage</li>
+							<li>Cloud function</li>
+						</ul>
+
+						<link rel="stylesheet" href="https://taskdom.web.app/"></link>
+					</li>
+					<li className=" flex flex-col space-y-10">
+						<div className="h-14 w-14 bg-[#F0F0F0] flex justify-center items-center">
+							<img src={estateSvg} alt="estate logo" className="h-10 w-10" />
+						</div>
+						<div>
+							<a
+								href="https://estate-2aef8.web.app/"
+								target="_blank"
+								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
+							>
+								Estate.
+							</a>
+						</div>
+
+						<div className="h-full w-full flex rounded-md  justify-center items-center ">
+							<img
+								src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724511326/estate-min_zqenop.png"
+								alt="estate"
+							/>
+						</div>
+
+						<p>
+							A property app to window shop our outrageously expensive
+							properties.
+						</p>
+						<ul className="flex flex-col space-y-2 text-gray-400">
+							<li className="text-black ">Tech Stack</li>
+
+							<li>React</li>
+							<li>Redux/toolkit</li>
+							<li>React-router</li>
+							<li>Material-UI</li>
+							<li>Firebase auth</li>
+							<li>Realtime Database</li>
+							<li>cloud function</li>
+							<li>Data from Rightmove Api </li>
+						</ul>
 					</li>
 				</ul>
 			</section>
