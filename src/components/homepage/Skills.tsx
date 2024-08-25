@@ -1,4 +1,3 @@
-import React from "react";
 import StaggeredAnimationText from "../animation/StaggerAnimation";
 
 const Skills = () => {

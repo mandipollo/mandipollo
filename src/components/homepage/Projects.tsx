@@ -2,13 +2,12 @@ import { FC } from "react";
 import StaggeredAnimationText from "../animation/StaggerAnimation";
 
 import taskdomSvg from "../../assets/taskdomLogo.svg";
-import estateSvg from "../../assets/estateLogo.svg";
+import estateSvg1 from "../../assets/house-sun-svgrepo-com.svg";
 
 const Projects: FC = () => {
 	return (
 		<section className="flex relative md:flex-row flex-col border-y  p-2 md:py-20  border-opacity-5  ">
 			<section className="flex flex-col h-full md:w-1/2  md:sticky top-20  ">
-				{/* <p className="md:text-5xl text-2xl">Projects.</p> */}
 				<StaggeredAnimationText
 					text="Projects"
 					className="md:text-5xl text-2xl flex justify-center"
@@ -23,6 +22,7 @@ const Projects: FC = () => {
 
 						<div>
 							<a
+								rel="noopener noreferrer"
 								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
 								target="_blank"
 								href="https://taskdom.web.app/"
@@ -58,11 +58,12 @@ const Projects: FC = () => {
 						<link rel="stylesheet" href="https://taskdom.web.app/"></link>
 					</li>
 					<li className=" flex flex-col space-y-10">
-						<div className="h-14 w-14 bg-[#F0F0F0] flex justify-center items-center">
-							<img src={estateSvg} alt="estate logo" className="h-10 w-10" />
+						<div className="h-14 w-14 bg-[#01DEB6] flex justify-center items-center">
+							<img src={estateSvg1} alt="estate logo" className="h-10 w-10" />
 						</div>
 						<div>
 							<a
+								rel="noopener noreferrer"
 								href="https://estate-2aef8.web.app/"
 								target="_blank"
 								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
@@ -71,7 +72,7 @@ const Projects: FC = () => {
 							</a>
 						</div>
 
-						<div className="h-full w-full flex rounded-md  justify-center items-center ">
+						<div className="h-full w-full flex  rounded-md  justify-center items-center ">
 							<img
 								src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724511326/estate-min_zqenop.png"
 								alt="estate"

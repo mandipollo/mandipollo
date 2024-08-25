@@ -35,7 +35,7 @@ const Introduction: FC = () => {
 					Designer,{" "}
 				</motion.span>
 				<motion.span variants={childVariants}>
-					and Investor, living in{" "}
+					and Investor, based in{" "}
 				</motion.span>
 				<motion.span
 					variants={childVariants}

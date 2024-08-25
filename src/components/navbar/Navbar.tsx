@@ -9,9 +9,9 @@ const Navbar: FC<{ showNav: boolean }> = ({ showNav }) => {
 		>
 			<ul className="flex justify-center items-start flex-row space-x-4">
 				<li className=" flex flex-col">
-					<button id="work" className="text-gray-400 hover:text-yellow-600 ">
+					<p id="work" className="text-gray-400 ">
 						Front End Developer
-					</button>
+					</p>
 					<p className="font-semibold">Mandipollo</p>
 				</li>
 			</ul>

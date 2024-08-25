@@ -30,7 +30,7 @@ const Root = () => {
 	}, [lastScrollY]);
 
 	return (
-		<main className="flex relative flex-col  w-screen overflow-auto ">
+		<main className="flex relative flex-col w-screen overflow-auto ">
 			<Navbar showNav={showNav} />
 			<section className="p-6 ">
 				<Outlet />
