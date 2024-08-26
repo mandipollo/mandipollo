@@ -3,10 +3,12 @@ import StaggeredAnimationText from "../animation/StaggerAnimation";
 
 import taskdomSvg from "../../assets/taskdomLogo.svg";
 import estateSvg1 from "../../assets/house-sun-svgrepo-com.svg";
+import GridBackground from "../GridBackground";
 
 const Projects: FC = () => {
 	return (
 		<section className="flex relative md:flex-row flex-col border-y  p-2 md:py-20  border-opacity-5  ">
+			<GridBackground />
 			<section className="flex flex-col h-full md:w-1/2  md:sticky top-20  ">
 				<StaggeredAnimationText
 					text="Projects"

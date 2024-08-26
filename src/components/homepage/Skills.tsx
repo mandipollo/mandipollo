@@ -1,8 +1,10 @@
 import StaggeredAnimationText from "../animation/StaggerAnimation";
+import GridBackground from "../GridBackground";
 
 const Skills = () => {
 	return (
 		<section className="flex relative md:flex-row flex-col  p-2 md:py-20   ">
+			<GridBackground />
 			<section className="flex flex-col h-full md:w-1/2  md:sticky top-20  ">
 				<StaggeredAnimationText
 					text="Skills"
