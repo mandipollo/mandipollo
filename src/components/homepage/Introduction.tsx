@@ -21,7 +21,7 @@ const Introduction: FC = () => {
 	};
 
 	return (
-		<section className="flex flex-col gap-10">
+		<main className="flex flex-col gap-10">
 			<GridBackground />
 			<motion.p
 				className="text-5xl md:text-8xl text-gray-400"
@@ -49,10 +49,10 @@ const Introduction: FC = () => {
 				</motion.span>
 				<motion.span variants={childVariants}> UK.</motion.span>
 			</motion.p>
-			<section className=" flex justify-center items-center">
-				<Lottie animationData={devAniamtion} />
-			</section>
-		</section>
+			<figure className=" flex justify-center items-center">
+				<Lottie animationData={devAniamtion} alt="A web developer working" />
+			</figure>
+		</main>
 	);
 };
 

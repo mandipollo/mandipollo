@@ -1,5 +1,4 @@
 import { FC } from "react";
-import StaggeredAnimationText from "../animation/StaggerAnimation";
 
 import taskdomSvg from "../../assets/taskdomLogo.svg";
 import estateSvg1 from "../../assets/house-sun-svgrepo-com.svg";
@@ -7,43 +6,48 @@ import GridBackground from "../GridBackground";
 
 const Projects: FC = () => {
 	return (
-		<section className="flex relative md:flex-row flex-col border-y  p-2 md:py-20  border-opacity-5  ">
+		<main className="flex relative md:flex-row flex-col border-y  p-2 md:py-20  border-opacity-5  ">
 			<GridBackground />
 			<section className="flex flex-col h-full md:w-1/2  md:sticky top-20  ">
-				<StaggeredAnimationText
-					text="Projects"
-					className="md:text-5xl text-2xl flex justify-center"
-				/>
+				<h1 className="md:text-5xl text-2xl flex justify-center">Projects</h1>
 			</section>
-			<section className="flex  flex-1 w-full  text-gray-400">
-				<ul className="flex flex-col space-y-10 font-extralight">
-					<li className=" flex flex-col space-y-10">
-						<div className="h-14 w-14 bg-black flex justify-center items-center">
-							<img src={taskdomSvg} alt="taskdom logo" className="h-10 w-10" />
-						</div>
+			<section className="flex flex-col  flex-1 w-full font-extralight  text-gray-400">
+				<article className=" flex flex-col space-y-10 ">
+					<figure className="h-14 w-14 bg-black flex justify-center items-center">
+						<img
+							loading="lazy"
+							src={taskdomSvg}
+							alt="taskdom logo"
+							className="h-10 w-10"
+						/>
+					</figure>
 
-						<div>
-							<a
-								rel="noopener noreferrer"
-								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
-								target="_blank"
-								href="https://taskdom.web.app/"
-							>
-								Taskdom.
-							</a>
-						</div>
+					<h2>
+						<a
+							aria-label="directs user to taskdom web app in new tab"
+							rel="noopener noreferrer"
+							className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
+							target="_blank"
+							href="https://taskdom.web.app/"
+						>
+							Taskdom.
+						</a>
+					</h2>
 
-						<div className="h-full w-full flex rounded-md  justify-center items-center  ">
-							<img
-								src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1719861512/taskSnapshot_q7udnp.jpg"
-								alt="taskdom"
-							/>
-						</div>
+					<figure className="h-full w-full flex rounded-md  justify-center items-center  ">
+						<img
+							loading="lazy"
+							src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724872008/taskSnapshot_q7udnp_nku8lu.webp"
+							alt="taskdom"
+						/>
+					</figure>
 
-						<p>
-							A project management app which lets you manage , assign tasks to
-							members.
-						</p>
+					<p>
+						A project management app which lets you manage , assign tasks to
+						members.
+					</p>
+
+					<section>
 						<ul className="flex flex-col space-y-2 text-gray-400 ">
 							<li className="text-black ">Tech Stack</li>
 							<li>Typescript</li>
@@ -56,35 +60,42 @@ const Projects: FC = () => {
 							<li>Firebase storage</li>
 							<li>Cloud function</li>
 						</ul>
+					</section>
+				</article>
+				<article className=" flex flex-col space-y-10">
+					<figure className="h-14 w-14 bg-[#01DEB6] flex justify-center items-center">
+						<img
+							loading="lazy"
+							src={estateSvg1}
+							alt="estate logo"
+							className="h-10 w-10"
+						/>
+					</figure>
+					<h2>
+						<a
+							aria-label="directs user to estate web app in new tab"
+							rel="noopener noreferrer"
+							href="https://estate-2aef8.web.app/"
+							target="_blank"
+							className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
+						>
+							Estate.
+						</a>
+					</h2>
 
-						<link rel="stylesheet" href="https://taskdom.web.app/"></link>
-					</li>
-					<li className=" flex flex-col space-y-10">
-						<div className="h-14 w-14 bg-[#01DEB6] flex justify-center items-center">
-							<img src={estateSvg1} alt="estate logo" className="h-10 w-10" />
-						</div>
-						<div>
-							<a
-								rel="noopener noreferrer"
-								href="https://estate-2aef8.web.app/"
-								target="_blank"
-								className="text-black underline underline-offset-2 hover:text-yellow-600 text-lg"
-							>
-								Estate.
-							</a>
-						</div>
+					<figure className="h-full w-full flex  rounded-md  justify-center items-center ">
+						<img
+							loading="lazy"
+							src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724871992/estate-min_zqenop_retwbo.webp"
+							alt="estate"
+						/>
+					</figure>
 
-						<div className="h-full w-full flex  rounded-md  justify-center items-center ">
-							<img
-								src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724511326/estate-min_zqenop.png"
-								alt="estate"
-							/>
-						</div>
+					<p>
+						A property app to window shop our outrageously expensive properties.
+					</p>
 
-						<p>
-							A property app to window shop our outrageously expensive
-							properties.
-						</p>
+					<section>
 						<ul className="flex flex-col space-y-2 text-gray-400">
 							<li className="text-black ">Tech Stack</li>
 
@@ -97,10 +108,10 @@ const Projects: FC = () => {
 							<li>cloud function</li>
 							<li>Data from Rightmove Api </li>
 						</ul>
-					</li>
-				</ul>
+					</section>
+				</article>
 			</section>
-		</section>
+		</main>
 	);
 };
 

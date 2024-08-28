@@ -11,7 +11,7 @@ const StaggeredAnimationText: FC<{ text: string; className: string }> = ({
 		animate: { opacity: 1, y: 0 },
 	};
 	return (
-		<div>
+		<h1>
 			{/* staggered text animations */}
 			{/* for screen readers */}
 			<span className="sr-only">{text}</span>
@@ -48,7 +48,7 @@ const StaggeredAnimationText: FC<{ text: string; className: string }> = ({
 					</React.Fragment>
 				))}
 			</motion.span>
-		</div>
+		</h1>
 	);
 };
 export default StaggeredAnimationText;
