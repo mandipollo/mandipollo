@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import GridBackground from "../GridBackground";
+import Lottie from "lottie-react";
+import devAniamtion from "../../assets/Animation - 1724870862507.json";
 
 const Introduction: FC = () => {
 	const containerVariants = {
@@ -47,19 +49,8 @@ const Introduction: FC = () => {
 				</motion.span>
 				<motion.span variants={childVariants}> UK.</motion.span>
 			</motion.p>
-			<section className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
-				<img
-					loading="lazy"
-					className=" transition-all duration-300 ease-in-out grid rounded-lg object-cover aspect-[4/3]"
-					src="https://framerusercontent.com/images/rXaN3YNnNyP3dSqvuierGToh58.jpg"
-					alt="stock photos"
-				/>
-				<img
-					loading="lazy"
-					className=" hidden md:grid rounded-lg object-cover aspect-[4/3]"
-					src="https://framerusercontent.com/images/nx3rNVUkwxhAHjK5z5rho3kBrBA.webp?scale-down-to=2048"
-					alt="stock photos"
-				/>
+			<section className=" flex justify-center items-center">
+				<Lottie animationData={devAniamtion} />
 			</section>
 		</section>
 	);
