@@ -23,6 +23,8 @@ const HomePage: FC = () => {
 		[0, 1],
 		[0, pathLength]
 	);
+	console.log(strokeDashoffset);
+
 	return (
 		<main className="flex flex-col relative  ">
 			<div className="flex fixed top-0 left-0 h-full w-full justify-center items-center overflow-hidden">
