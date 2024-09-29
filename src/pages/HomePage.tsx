@@ -1,61 +1,78 @@
 import { FC, useEffect, useRef, useState } from "react";
 import Introduction from "../components/homepage/Introduction";
-import { motion, useScroll, useTransform } from "framer-motion";
+
 import Projects from "../components/homepage/projects";
 import About from "../components/homepage/About";
 
 const HomePage: FC = () => {
+	// find the path length of the line and give the offset the same length to hide it , when user scrolls minus the offset in % to the screen vh
 	const [pathLength, setPathLength] = useState<number>(0);
-	const ref = useRef<SVGPathElement | null>(null);
+	const [dashOffset, setDashOffset] = useState<number>(0);
+
+	const pathRef = useRef<SVGPathElement>(null);
+
+	// window.addEventListener("scroll", () => {
+	// 	console.log("scroll");
+	// });
+	// main issue the scroll listener does not fire event
 
 	useEffect(() => {
-		if (ref.current) {
-			const length = ref.current.getTotalLength();
-			console.log(length);
-			setPathLength(length);
-		}
+		const handleScroll = () => {
+			if (pathRef.current) {
+				const length = pathRef.current.getTotalLength();
+
+				setPathLength(length);
+				setDashOffset(length);
+				const scrollPercentage =
+					window.scrollY /
+					(window.document.documentElement.scrollHeight - window.innerHeight);
+
+				const drawLength = Number.isNaN(scrollPercentage)
+					? 0
+					: length * scrollPercentage;
+
+				setDashOffset(length - drawLength);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	}, []);
 
-	const { scrollYProgress } = useScroll();
-
-	const strokeDashoffset = useTransform(
-		scrollYProgress,
-		[0, 1],
-		[0, pathLength]
-	);
-	console.log(strokeDashoffset);
-
 	return (
-		<main className="flex flex-col relative  ">
-			<div className="flex fixed top-0 left-0 h-full w-full justify-center items-center overflow-hidden">
+		<main className="flex h-full flex-col  text-white ">
+			<div className=" fixed top-0 left-0 w-full h-full text-center pointer-events-none">
 				<svg
-					preserveAspectRatio="xMidYMax meet"
-					viewBox="0 0 811 2275"
+					viewBox="0 0 395 2336"
 					fill="none"
-					className="h-full inline-block"
+					preserveAspectRatio="xMidYMax meet"
+					className="inline-block h-full w-full"
 				>
-					<g filter="url(#filter0_d_2_9)">
-						<motion.path
-							strokeWidth={2}
-							initial={{ pathLength: 0 }}
-							animate={{ pathLength: 1 }}
-							transition={{ duration: 10 }}
-							d="M369.999 1C369.999 1 206.999 275 369.999 324C532.999 373 440.999 453 369.999 523C299 593 336.999 622 369.999 642C403 662 369.999 749.837 369.999 769.918C369.999 790 369.999 1095 369.999 1095C369.999 1095 586 1325 686 1271C786 1217 806 1157 806 1157C806 1157 792 1077 686 1077C580 1077 236 1299 106 1271C-24 1243 8.00002 1157 8.00002 1157C8.00002 1157 30 1077 106 1077C182 1077 500 1337 566 1349C632 1361 642 1299 642 1299C642 1299 696 1219 566 1187C436 1155 248 1349 182 1349C116 1349 126 1299 126 1299C126 1299 122 1231 182 1219C242 1207 369.999 1313 369.999 1313C369.999 1313 444 1385 369.999 1509C295.999 1633 369.999 1675 369.999 2267"
+					<g filter="url(#filter0_d_1_7)">
+						<path
+							style={{ strokeDashoffset: dashOffset }}
+							strokeDasharray={`${pathLength}  ${pathLength}`}
+							ref={pathRef}
+							strokeWidth={10}
+							d="M209 0V206C222.662 242.951 231.997 251.103 251 248C277.655 237.934 280.834 229.496 272 211C211.965 204.543 175.818 220.146 179 253C195.819 250.77 203.699 249.485 209 226V296V359C159.867 421.484 164.369 456.516 209 519C261.393 587.67 260.784 618.844 209 658C157.319 722.648 153.781 755.715 209 807C284.859 884.372 282.545 930.955 209 1019C157.417 1108.19 159.364 1159.24 209 1249V1583V1854C233.501 1919.21 257.835 1942.22 321 1958C380.806 1945.89 394.254 1921.89 389 1854C246.611 1847.03 183.117 1873.47 90 1958C11.5057 1955.05 -7.38621 1933.7 12 1854C244.332 1773.36 325.497 1816.99 389 2042C302.633 2098.5 134.338 2074.01 209 2127C229.35 2244.35 226.429 2282.51 209 2327"
 							stroke="#F24040"
-							shape-rendering="crispEdges"
+							shapeRendering="geometricPrecision"
 						/>
 					</g>
 					<defs>
 						<filter
-							id="filter0_d_2_9"
-							x="0.017395"
-							y="0.747314"
-							width="810.497"
-							height="2274.25"
+							id="filter0_d_1_7"
+							x="0.450378"
+							y="0"
+							width="394.09"
+							height="2335.18"
 							filterUnits="userSpaceOnUse"
-							color-interpolation-filters="sRGB"
+							colorInterpolationFilters="sRGB"
 						>
-							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feFlood floodOpacity="0" result="BackgroundImageFix" />
 							<feColorMatrix
 								in="SourceAlpha"
 								type="matrix"
@@ -72,19 +89,18 @@ const HomePage: FC = () => {
 							<feBlend
 								mode="normal"
 								in2="BackgroundImageFix"
-								result="effect1_dropShadow_2_9"
+								result="effect1_dropShadow_1_7"
 							/>
 							<feBlend
 								mode="normal"
 								in="SourceGraphic"
-								in2="effect1_dropShadow_2_9"
+								in2="effect1_dropShadow_1_7"
 								result="shape"
 							/>
 						</filter>
 					</defs>
 				</svg>
 			</div>
-
 			<Introduction />
 			<Projects />
 			<About />

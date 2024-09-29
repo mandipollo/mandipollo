@@ -47,7 +47,7 @@ const About = () => {
 		},
 	];
 	return (
-		<main className="flex flex-col gap-10 text-white min-h-screen z-10 p-10 ">
+		<main className="flex flex-col gap-10 text-white min-h-screen p-10 z-10 ">
 			<header className="flex  ">
 				<h2 className="flex items-center text-4xl flex-col">
 					<p>

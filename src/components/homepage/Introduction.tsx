@@ -1,6 +1,6 @@
 const Introduction = () => {
 	return (
-		<main className="flex justify-center items-center min-h-screen z-10">
+		<main className="flex justify-center flex-col items-center min-h-screen z-10">
 			<section className=" flex w-full h-full gap-8 flex-col p-10 justify-center items-start">
 				<div className="flex flex-col gap-2">
 					<div className="flex space-x-2">
