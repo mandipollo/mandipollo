@@ -62,8 +62,8 @@ const HomePage: FC = () => {
 							y2="3846.5"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stop-color="#55B855" />
-							<stop offset="1" stop-color="#4AB6E7" />
+							<stop stopColor="#55B855" />
+							<stop offset="1" stopColor="#4AB6E7" />
 						</linearGradient>
 					</defs>
 				</svg>

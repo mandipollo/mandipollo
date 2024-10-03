@@ -1,16 +1,20 @@
+import { useState } from "react";
 import githubSvg from "../../assets/github.svg";
 import outSvg from "../../assets/out.svg";
+import MiniBrowser from "../miniBrowser/MiniBrowser";
 
 const Projects = () => {
+	const [url, setUrl] = useState<string | null>(null);
+
+	const handleUrl = (u: string) => {
+		setUrl(u);
+	};
 	return (
-		<main className="relative flex flex-col min-h-screen z-10 text-white p-10 ">
-			<section className=" relative">
-				{/* <motion.img
-					src="https://res.cloudinary.com/dbg68gzpx/image/upload/v1724872008/taskSnapshot_q7udnp_nku8lu.webp"
-					className="absolute top-0 left-0 z-0"
-				></motion.img> */}
+		<main className="relative  flex flex-row min-h-screen z-10 text-white p-10 gap-10 ">
+			<section className="md:w-1/2 md:flex hidden">
+				<MiniBrowser url={url || null} />
 			</section>
-			<div className=" flex flex-col gap-10">
+			<section className=" flex  justify-center  flex-col gap-10">
 				<header className="flex">
 					<div className="text-4xl flex-col inline-flex ">
 						<p className="flex items-center">
@@ -24,7 +28,10 @@ const Projects = () => {
 				</header>
 				<section className=" flex flex-col gap-8 ">
 					<div className="flex">
-						<div className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2">
+						<div
+							onClick={() => handleUrl("https://lumishade.netlify.app/")}
+							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Lumishade</h3>
 								<a
@@ -49,7 +56,10 @@ const Projects = () => {
 					</div>
 
 					<div className="flex">
-						<div className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2">
+						<div
+							onClick={() => handleUrl("https://taskdom.web.app/")}
+							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Taskdom</h3>
 								<a href="https://github.com/mandipollo/taskdom" target="_blank">
@@ -72,7 +82,10 @@ const Projects = () => {
 					</div>
 
 					<div className="flex">
-						<div className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2">
+						<div
+							onClick={() => handleUrl("https://estate-2aef8.web.app/")}
+							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Estate</h3>
 								<a
@@ -97,7 +110,7 @@ const Projects = () => {
 						</div>
 					</div>
 				</section>
-			</div>
+			</section>
 		</main>
 	);
 };

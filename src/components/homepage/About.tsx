@@ -86,6 +86,19 @@ const About = () => {
 					<li>Nodejs</li>
 					<li>GSAP</li>
 				</ul>
+				<div className="flex flex-col gap-2">
+					<div className="flex space-x-2">
+						<span className="h-2 w-40 bg-gradient-to-r from-yellow-400 to-orange-400 "></span>
+						<span className="h-2 w-10 bg-gradient-to-r from-purple-400 to-cyan-400"></span>
+						<span className="h-2 w-2 bg-gradient-to-r from-pink-400 to-cyan-400"></span>
+					</div>
+					<div className="flex space-x-2">
+						<span className="h-2 w-20 bg-gradient-to-r from-purple-400 to-orange-400"></span>
+						<span className="h-2 w-10 bg-gradient-to-r from-green-400 to-cyan-400"></span>
+						<span className="h-2 w-2 bg-gradient-to-r rounded-full from-slate-400 to-slate-400"></span>
+						<span className="h-2 w-6 md:w-20 bg-gradient-to-r from-green-400 to-cyan-400"></span>
+					</div>
+				</div>
 			</section>
 		</main>
 	);
