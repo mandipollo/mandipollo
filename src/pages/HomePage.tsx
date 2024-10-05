@@ -1,13 +1,15 @@
 import { FC, useEffect, useRef, useState } from "react";
-import Introduction from "../components/homepage/Introduction";
 
+import Introduction from "../components/homepage/Introduction";
 import Projects from "../components/homepage/projects";
 import About from "../components/homepage/About";
+import Footer from "../components/footer/Footer";
 
 const HomePage: FC = () => {
 	// find the path length of the line and give the offset the same length to hide it , when user scrolls minus the offset in % to the screen vh
 	const [pathLength, setPathLength] = useState<number>(0);
 	const [dashOffset, setDashOffset] = useState<number>(0);
+	const [scrollY, setScrollY] = useState<number>(0);
 
 	const pathRef = useRef<SVGPathElement>(null);
 
@@ -21,6 +23,7 @@ const HomePage: FC = () => {
 					window.scrollY /
 					(window.document.documentElement.scrollHeight - window.innerHeight);
 
+				setScrollY(scrollPercentage);
 				const drawLength = Number.isNaN(scrollPercentage)
 					? 0
 					: length * scrollPercentage;
@@ -37,40 +40,41 @@ const HomePage: FC = () => {
 	}, []);
 
 	return (
-		<main className="flex h-full flex-col  text-white ">
-			<div className=" fixed top-0 left-0 w-full h-full text-center pointer-events-none">
+		<main className="flex h-full flex-col text-white ">
+			<section className="fixed top-0 left-0 w-full h-full text-center pointer-events-none">
 				<svg
-					fill="none"
 					preserveAspectRatio="xMidYMax meet"
 					className="inline-block h-full w-full"
-					viewBox="0 0 2261 7004"
+					viewBox="0 0 145 2485"
+					fill="none"
 				>
 					<path
 						style={{ strokeDashoffset: dashOffset }}
 						strokeDasharray={`${pathLength}  ${pathLength}`}
 						ref={pathRef}
-						strokeWidth={20}
-						d="M1112.5 0V228C1169.44 415.361 1164.76 495.253 1112.5 605C1040.57 769.997 1043.23 862.503 1112.5 1027.5C1245.29 1306.11 1246.48 1525.96 1112.5 1742.5C883.911 2101.64 959.64 2317.98 1112.5 2648C1218.25 2871.25 1208.61 2913.05 1112.5 3144C1040.87 3292.22 1047.05 3379.23 1112.5 3539C1161.24 3663.08 1157.61 3730.11 1112.5 3846.5L990 4058H1230.5L1112.5 3860V4253V4588L684.5 4808.5L1112.5 4949L1507.5 4808.5L1112.5 4658.5L882 4808.5L1112.5 4866L1230.5 4808.5L1112.5 4738.5V5552L623.5 5938L362 5552L1472.5 5938L1852 5552L1112.5 5938L1.5 5552L362 6452L1472.5 6247.5L2260.5 5552L1112.5 6107.5V7004 "
-						stroke="url(#paint0_linear_1_6)"
+						strokeWidth={10}
+						d="M42.5 0.5C53.3227 48.5731 52.0607 76.5581 42.5 127.5C22.5613 191.53 25.3266 226.347 42.5 287.5C65.0782 362.354 63.1031 405.288 42.5 483C5.34941 606.417 5.93063 673.123 42.5 788C111.216 958.985 113.657 1056.32 42.5 1233C-13.3113 1370.27 -12.4202 1447.23 42.5 1584.5C79.6702 1691.14 79.6442 1753.32 42.5 1868.5C16.4948 1944.28 17.5259 1988.52 42.5 2070C50.9656 2105.85 51.4421 2128.75 42.5 2176V2394.5H144L42.5 2423.5V2484.5"
+						stroke="url(#paint0_linear_2_2)"
 					/>
 					<defs>
 						<linearGradient
-							id="paint0_linear_1_6"
-							x1="1084.26"
-							y1="228"
-							x2="1084.26"
-							y2="3846.5"
+							id="paint0_linear_2_2"
+							x1="72.4875"
+							y1="0.5"
+							x2="72.4875"
+							y2="2484.5"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stopColor="#55B855" />
-							<stop offset="1" stopColor="#4AB6E7" />
+							<stop stopColor="#FF0000" />
+							<stop offset="1" stopColor="#00FF80" />
 						</linearGradient>
 					</defs>
 				</svg>
-			</div>
+			</section>
 			<Introduction />
 			<Projects />
 			<About />
+			<Footer scrollY={scrollY} />
 		</main>
 	);
 };

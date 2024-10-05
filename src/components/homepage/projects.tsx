@@ -30,7 +30,7 @@ const Projects = () => {
 					<div className="flex">
 						<div
 							onClick={() => handleUrl("https://lumishade.netlify.app/")}
-							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+							className="text-slate-100 hover:cursor-pointer hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
 						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Lumishade</h3>
@@ -58,7 +58,7 @@ const Projects = () => {
 					<div className="flex">
 						<div
 							onClick={() => handleUrl("https://taskdom.web.app/")}
-							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+							className="text-slate-100 hover:cursor-pointer hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
 						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Taskdom</h3>
@@ -84,7 +84,7 @@ const Projects = () => {
 					<div className="flex">
 						<div
 							onClick={() => handleUrl("https://estate-2aef8.web.app/")}
-							className="text-slate-100 hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
+							className="text-slate-100 hover:cursor-pointer hover:bg-black hover:bg-opacity-25 flex flex-col rounded-md gap-2 p-2"
 						>
 							<div className="flex flex-row space-x-2 items-center">
 								<h3 className="text-2xl">Estate</h3>

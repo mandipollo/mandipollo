@@ -32,17 +32,22 @@ const About = () => {
 			id: 8,
 			tech: "REACT",
 		},
-
+		{ id: 9, tech: "REACT-ROUTER" },
 		{
 			id: 10,
+			tech: "REDUXJS/TOOLKIT",
+		},
+
+		{
+			id: 11,
 			tech: "FRAMER MOTION",
 		},
 		{
-			id: 11,
+			id: 12,
 			tech: "GOOGLE CLOUD",
 		},
 		{
-			id: 12,
+			id: 13,
 			tech: "GIT",
 		},
 	];
@@ -67,13 +72,33 @@ const About = () => {
 				</h2>
 			</header>
 			<section className="flex">
-				<p className="flex text-slate-400">
-					I`m a Frontend developer from Farnborough , UK. <br /> I love to
-					create minimilistic visually appealing web apps.
-				</p>
+				<article className="flex flex-col text-slate-400">
+					<p> Frontend developer based in Farnborough , UK.</p>
+					<div className="flex flex-row">
+						<p> You`ll usually find me charged with coffee</p>
+						<iframe
+							className="h-10 w-10"
+							src="https://giphy.com/embed/XEOdmFHVznCerkI6CI"
+						></iframe>
+					</div>
+					<div className="flex flex-row">
+						<p>trying to center the div</p>
+						<iframe
+							src="https://giphy.com/embed/MdA16VIoXKKxNE8Stk"
+							className="h-10 w-10"
+						></iframe>
+					</div>
+					<div className="flex flex-row">
+						<p>or on my</p>
+						<iframe
+							src="https://giphy.com/embed/5Gwqx1lYbDwAg"
+							className="h-20 w-20"
+						></iframe>
+					</div>
+				</article>
 			</section>
 			<section className=" flex h-full gap-8 flex-col  ">
-				<h5 className="text-2xl">Tech Stacks</h5>
+				<h5 className="text-2xl">Tech Stack</h5>
 				<ul className="text-sm text-slate-400">
 					{techStacks.map(tech => (
 						<li key={tech.id}>{tech.tech}</li>

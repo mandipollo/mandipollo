@@ -1,10 +1,12 @@
 import React from "react";
 
-const MiniBrowser: React.FC<{ url: string | null }> = ({ url }) => {
+const MiniBrowser: React.FC<{
+	url: string | null;
+}> = ({ url }) => {
 	if (!url) {
 		return (
 			<main className="flex justify-center items-center h-full w-full">
-				<h2>Open project</h2>
+				<p>Click on the projects to preview </p>
 			</main>
 		);
 	}
